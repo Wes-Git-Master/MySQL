@@ -1,9 +1,10 @@
-use asdasd;
 
-show databases;  -   ( show database )
+use wes;           // використати базу даних за назвою
+show databases;   // показати базу даних за назвою
 
-select * from cars; ( * - all )
-select id, model, year from cars;
+select * from cars;                      //  "select" - вибір чогось конкретного з таблички
+select id, model, year from cars;       //  "from"   - " з чогось "
+                                       //  "*" - все
 
 select * from users where name = 'OLEG';
 select * from users where name != 'OLEG';
