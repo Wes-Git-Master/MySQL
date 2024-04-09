@@ -71,6 +71,7 @@
 
  - select count(*), gender from users where age<=25 group by gender;
       " group by 'key' " - групування по чомусь
+
  - select count(*) as count, model from cars where year>2020 group by model having count>=2;
       " having 'key' = ' value ' " - в якому 'key' ( >< <= >= = ) ' value '
 
@@ -106,7 +107,7 @@
  - delete  from users where id=6;   //  " delete " - видалити
 
  ==========================================================================
-                            || delete object from table ( db ) ||
+                            || update object from table ( db ) ||
 
  - update users set name='Karina' where id=5;
     " update 'nameOfTable' set name='newValue' where id=5 "
