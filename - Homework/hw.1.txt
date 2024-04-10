@@ -73,6 +73,7 @@
   /* - знайти марку машини в назві яких друга та передостання буква "a"                   */
   select model from cars where substring(model, 2, 1) = 'a'
   and substring(model, length(model) - 1, 1) = 'a';
+  (select * from cars where model like '_a%a_';)
 
   /* - знайти всі машини назва моделі яких більше за 8 символів                           */
   select * from cars where length(model) > 8;
