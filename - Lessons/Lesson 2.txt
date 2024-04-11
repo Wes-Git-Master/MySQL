@@ -1,7 +1,7 @@
  ==========================================================================
                             || distinct ||
 
- - select distinct name, age        //   вибір унікальних значень
+ - select distinct name, age                  //   вибір унікальних значень
  - from users;
 
  ==========================================================================
@@ -12,14 +12,14 @@
 
  - select avg(age)
  - from users
- - union                           //   об'єднання результатів двох або більше select запитів у один результат
- - select sum(age)
- - from users;
+ - union                                  //   об'єднання результатів двох
+ - select sum(age)                              або більше select запитів
+ - from users;                                   у один результат
 
  ==========================================================================
                             || describe ||
 
- - describe cars;   //     отримання структури таблиці
+ - describe cars;                        //     отримання структури таблиці
  - desc cars;
 
  ==========================================================================
@@ -31,9 +31,9 @@
  ==========================================================================
                             || concat ||
 
- - select concat('My name is ', name, ' I`m ', age, ' gender - ', gender) as strings
- - from users;    //   конкатинація
-
+ - select concat('My name is ', name, ' I`m ', age, ' gender - ', gender)
+   as strings from users;
+                                                          //   конкатинація
  - # 'Ms Olha Female'
 
  - select *
@@ -45,25 +45,34 @@
  - select *
 
  ==========================================================================
+ ===========================
 
- - from users            !!!
- - where name > 'max';   !!!
+ - from users               !!!
+ - where name > 'max';      !!!
 
+ ===========================
  ==========================================================================
                              || orders ||
 
  - select id, name, age
  - from users
  - order by 3 desc;
+
+ ==========================================================================
+                             || lower() and upper() ||
+
  - select id, lower(name) as name, age, gender
  - from users;
  - select id, upper(name) as name, age, gender
  - from users;
 
- - select *
- - from client
- -          join application on client.idClient = application.Client_idClient
- -          join department on department.idDepartment = client.Department_idDepartment
+ ==========================================================================
+                             || join / on||
+ - select * from client
+    join
+    application on client.idClient = application.Client_idClient
+    join
+    department on department.idDepartment = client.Department_idDepartment
  - where City = 'Kyiv';
 
  - # drop table cars;
@@ -85,17 +94,16 @@
        city_id int             null,
        foreign key (city_id) references cities (id)
 
-  );
+  );                                 //   references - посилання/посилатись
 
  - select user.id, user.name, age, c.city
  - from user
  -          join cities c on c.id = user.city_id
  - where city = 'lviv';
 
+ ==========================================================================
+                              || left join / right join||
+
  - select * from user left join cities c on c.id = user.city_id;
  - select * from user right join cities c on c.id = user.city_id;
 
-
- - select * from cars where price> (select avg(price) from cars);
-
- - select * from client where Age in (select age from users);
