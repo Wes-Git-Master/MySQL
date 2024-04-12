@@ -1,11 +1,9 @@
- ==========================================================================
-                            || distinct ||
+ =========================== || distinct || ===============================
 
  - select distinct name, age                  //   вибір унікальних значень
- - from users;
+ - from users;                                     по ключу
 
- ==========================================================================
-                            || union ||
+ =========================== || union || ==================================
 
  - select avg(age), sum(age)
  - from users;
@@ -16,20 +14,18 @@
  - select sum(age)                              або більше select запитів
  - from users;                                   у один результат
 
- ==========================================================================
-                            || describe ||
+ =========================== || describe || ===============================
 
  - describe cars;                        //     отримання структури таблиці
  - desc cars;
 
- ==========================================================================
-                            || операції з ключами та їх виведенням ||
+ ================= || операції з ключами та їх виведенням || ==============
 
- - select id, model, price, price * 2 as duublePice
+
+ - select id, model, price, price * 2 as doublePrice
  - from cars;
 
- ==========================================================================
-                            || concat ||
+ =========================== || concat || =================================
 
  - select concat('My name is ', name, ' I`m ', age, ' gender - ', gender)
    as strings from users;
@@ -42,32 +38,31 @@
  - select *
  - from users
  - where age = id + 12;
- - select *
 
  ==========================================================================
  ===========================
 
+ - select *                 !!!
  - from users               !!!
  - where name > 'max';      !!!
 
  ===========================
- ==========================================================================
-                             || orders ||
+ ============================== || orders || ==============================
 
  - select id, name, age
  - from users
  - order by 3 desc;
 
- ==========================================================================
-                             || lower() and upper() ||
+ ======================= || lower() and upper() || ========================
+
 
  - select id, lower(name) as name, age, gender
  - from users;
  - select id, upper(name) as name, age, gender
  - from users;
 
- ==========================================================================
-                             || join / on||
+ ============================ || join / on|| 28:50  ||=====================
+
  - select * from client
     join
     application on client.idClient = application.Client_idClient
@@ -94,15 +89,14 @@
        city_id int             null,
        foreign key (city_id) references cities (id)
 
-  );                                 //   references - посилання/посилатись
+  );                               //   references - посилання/посилатись
 
  - select user.id, user.name, age, c.city
  - from user
  -          join cities c on c.id = user.city_id
  - where city = 'lviv';
 
- ==========================================================================
-                              || left join / right join||
+ ===================== || left join / right join|| ======================
 
  - select * from user left join cities c on c.id = user.city_id;
  - select * from user right join cities c on c.id = user.city_id;
