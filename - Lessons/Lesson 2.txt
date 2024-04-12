@@ -61,7 +61,7 @@
  - select id, upper(name) as name, age, gender
  - from users;
 
- ============================ || join / on|| 28:50  ||=====================
+ ============================ || join / on || (28:50)  =====================
 
  - select * from client
     join
@@ -96,7 +96,7 @@
  -          join cities c on c.id = user.city_id
  - where city = 'lviv';
 
- ===================== || left join / right join|| ======================
+ ===================== || left join / right join || ======================
 
  - select * from user left join cities c on c.id = user.city_id;
  - select * from user right join cities c on c.id = user.city_id;
