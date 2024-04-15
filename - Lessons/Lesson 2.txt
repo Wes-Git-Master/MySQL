@@ -61,7 +61,7 @@
  - select id, upper(name) as name, age, gender
  - from users;
 
- ============================ || join / on || (28:50)  =====================
+ ============================ || join / on || --- (28:50)  ================
 
  - select * from client
     join

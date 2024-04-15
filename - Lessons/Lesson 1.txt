@@ -76,7 +76,7 @@
       " having 'key' = ' value ' " - в якому 'key' ( >< <= >= = ) ' value '
 
  ==========================================================================
-                            || creating a table ||
+                            || creating a table || --- (42:35)
 
  - create table users
    (
